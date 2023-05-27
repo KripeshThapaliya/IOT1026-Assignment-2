@@ -25,6 +25,14 @@ namespace AssignmentTest
             chest.Open();
             Assert.AreEqual(chest.GetState(), TreasureChest.State.Open);
         }
+        [TestMethod]
+        public void OpenOpenTest()
+        {
+            // Create a new chest that is in the open state
+            TreasureChest chest = new TreasureChest(TreasureChest.State.Open);
+            //Verify that chest is still open
+            chest.Open();
+            Assert.AreEqual(chest.GetState(), TreasureChest.State.Open);
+        }
     }
-
 }
