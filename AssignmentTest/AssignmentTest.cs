@@ -6,9 +6,14 @@ namespace AssignmentTest
     public class AssignmentTests
     {
         [TestMethod]
-        public void DummyTest()
+        public void OpenLockedTest()
         {
-            Assert.AreNotSame(1, 2);
+            // Chest starts in the locked state
+            TreasureChest chest = new TreasureChest(TreasureChest.State.Locked);
+            // Try to open the chest
+            // Verify chest is still locked
+            chest.Open();
+            Assert.AreEqual(chest.GetState(), TreasureChest.State.Locked);
         }
     }
 }
